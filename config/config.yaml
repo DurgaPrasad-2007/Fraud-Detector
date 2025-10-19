@@ -1,0 +1,65 @@
+# Database Configuration
+database:
+  host: localhost
+  port: 5432
+  name: fraud_detection
+  user: postgres
+  password: ""  # TODO: Use environment variable in production
+
+# Redis Configuration
+redis:
+  host: localhost
+  port: 6379
+  db: 0
+  password: null
+
+# Model Configuration
+model:
+  ensemble_weights:
+    xgboost: 0.3
+    lightgbm: 0.3
+    catboost: 0.2
+    neural_network: 0.15
+    random_forest: 0.05
+  feature_columns:
+    - TX_AMOUNT
+    - hour_of_day
+    - day_of_week
+    - is_weekend
+    - amount_log
+    - customer_avg_amount
+    - customer_transaction_count
+    - customer_fraud_rate
+    - customer_amount_std
+    - terminal_avg_amount
+    - terminal_transaction_count
+    - terminal_fraud_rate
+    - days_since_last_transaction
+    - transactions_today
+    - amount_vs_avg_ratio
+  fraud_threshold: 0.5
+  batch_size: 512
+  max_features: 15
+
+# Monitoring Configuration
+monitoring:
+  prometheus_port: 9090
+  log_level: INFO
+  alert_thresholds:
+    fraud_rate: 0.15
+    processing_time_ms: 1000
+    error_rate: 0.05
+    cpu_usage: 80.0
+    memory_usage: 85.0
+  metrics_retention_days: 30
+
+# API Configuration
+api:
+  host: 0.0.0.0
+  port: 8000
+  workers: 1
+  reload: false
+  cors_origins:
+    - "http://localhost:3000"  # TODO: Restrict to specific domains
+    - "http://localhost:8080"
+  rate_limit: 1000

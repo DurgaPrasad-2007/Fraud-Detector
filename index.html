@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield AI - Advanced Fraud Detection Platform</title>
+    
+    <!-- Chart.js for advanced visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Revolutionary CSS Framework - CyberShield AI 2025 */
+        :root {
+            /* Core Color Palette */
+            --primary-dark: #0a0a0f;
+            --secondary-dark: #1a1a2e;
+            --accent-dark: #16213e;
+            --cyber-blue: #00d4ff;
+            --cyber-purple: #8b5cf6;
+            --cyber-pink: #f472b6;
+            --cyber-green: #10b981;
+            --cyber-red: #ef4444;
+            --cyber-orange: #f59e0b;
+            
+            /* Advanced Gradients */
+            --main-gradient: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 25%, #16213e 50%, #0f172a 75%, #0a0a0f 100%);
+            --cyber-gradient: linear-gradient(45deg, #00d4ff, #8b5cf6, #f472b6, #10b981);
+            --glass-gradient: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.02) 100%);
+            --neon-gradient: linear-gradient(90deg, #00d4ff, #8b5cf6, #f472b6);
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+            
+            /* Spacing System */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-neon: 0 0 20px rgba(0, 212, 255, 0.3);
+            --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.2);
+            
+            /* Transitions */
+            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--main-gradient);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Advanced Animations */
+        @keyframes matrixRain {
+            0% { transform: translateY(-100vh); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        @keyframes cyberPulse {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(0, 212, 255, 0.6), 0 0 60px rgba(0, 212, 255, 0.3);
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes neonGlow {
+            0%, 100% { 
+                text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+            }
+            50% { 
+                text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor, 0 0 40px currentColor;
+            }
+        }
+
+        @keyframes float3D {
+            0%, 100% { 
+                transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+            }
+            25% { 
+                transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            }
+            50% { 
+                transform: translateY(-5px) rotateX(-5deg) rotateY(-5deg);
+            }
+            75% { 
+                transform: translateY(-8px) rotateX(3deg) rotateY(-3deg);
+            }
+        }
+
+        @keyframes slideInUp {
+            0% { 
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            100% { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInScale {
+            0% { 
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes dataFlow {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Background Effects */
+        .cyber-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: var(--main-gradient);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .matrix-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--cyber-blue);
+            border-radius: 50%;
+            animation: matrixRain 8s linear infinite;
+            opacity: 0.6;
+        }
+
+        .particle:nth-child(odd) {
+            background: var(--cyber-purple);
+            animation-duration: 12s;
+        }
+
+        .particle:nth-child(3n) {
+            background: var(--cyber-pink);
+            animation-duration: 10s;
+        }
+
+        /* Layout Components */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+        .gap-2 { gap: var(--space-sm); }
+        .gap-4 { gap: var(--space-md); }
+        .gap-6 { gap: var(--space-lg); }
+        .gap-8 { gap: var(--space-xl); }
+        .gap-12 { gap: var(--space-2xl); }
+
+        /* Flexbox Utilities */
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .justify-end { justify-content: flex-end; }
+
+        /* Spacing Utilities */
+        .p-2 { padding: var(--space-sm); }
+        .p-4 { padding: var(--space-md); }
+        .p-6 { padding: var(--space-lg); }
+        .p-8 { padding: var(--space-xl); }
+        .p-12 { padding: var(--space-2xl); }
+
+        .px-4 { padding-left: var(--space-md); padding-right: var(--space-md); }
+        .py-2 { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+        .py-4 { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+        .py-6 { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+        .py-8 { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+
+        .mb-2 { margin-bottom: var(--space-sm); }
+        .mb-4 { margin-bottom: var(--space-md); }
+        .mb-6 { margin-bottom: var(--space-lg); }
+        .mb-8 { margin-bottom: var(--space-xl); }
+        .mb-12 { margin-bottom: var(--space-2xl); }
+
+        .mt-4 { margin-top: var(--space-md); }
+        .mt-6 { margin-top: var(--space-lg); }
+        .mt-8 { margin-top: var(--space-xl); }
+
+        /* Typography */
+        .text-xs { font-size: 0.75rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-base { font-size: 1rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-5xl { font-size: 3rem; }
+        .text-6xl { font-size: 3.75rem; }
+
+        .font-light { font-weight: 300; }
+        .font-normal { font-weight: 400; }
+        .font-medium { font-weight: 500; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        .font-extrabold { font-weight: 800; }
+        .font-black { font-weight: 900; }
+
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+
+        /* Colors */
+        .text-white { color: #ffffff; }
+        .text-gray-300 { color: #d1d5db; }
+        .text-gray-400 { color: #9ca3af; }
+        .text-cyber-blue { color: var(--cyber-blue); }
+        .text-cyber-purple { color: var(--cyber-purple); }
+        .text-cyber-pink { color: var(--cyber-pink); }
+        .text-cyber-green { color: var(--cyber-green); }
+        .text-cyber-red { color: var(--cyber-red); }
+        .text-cyber-orange { color: var(--cyber-orange); }
+
+        /* Modern Card System */
+        .cyber-card {
+            background: var(--glass-gradient);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--neon-gradient);
+            opacity: 0.6;
+        }
+
+        .cyber-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-2xl), var(--shadow-neon);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .cyber-card-primary {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-color: rgba(0, 212, 255, 0.2);
+        }
+
+        .cyber-card-danger {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(245, 101, 101, 0.1) 100%);
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+
+        .cyber-card-success {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.1) 100%);
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+
+        /* Button System */
+        .cyber-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-normal);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            font-family: var(--font-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cyber-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cyber-btn:hover::before {
+            left: 100%;
+        }
+
+        .cyber-btn-primary {
+            background: var(--cyber-gradient);
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cyber-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl), var(--shadow-neon);
+        }
+
+        .cyber-btn-secondary {
+            background: var(--glass-gradient);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cyber-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Form Elements */
+        .cyber-input {
+            width: 100%;
+            padding: var(--space-md) var(--space-lg);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            color: white;
+            font-family: var(--font-primary);
+            transition: var(--transition-normal);
+        }
+
+        .cyber-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .cyber-input:focus {
+            outline: none;
+            border-color: var(--cyber-blue);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Status Indicators */
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .status-online {
+            background: var(--cyber-green);
+            animation: heartbeat 2s ease-in-out infinite;
+            box-shadow: 0 0 10px var(--cyber-green);
+        }
+
+        .status-offline {
+            background: var(--cyber-red);
+            animation: heartbeat 2s ease-in-out infinite;
+            box-shadow: 0 0 10px var(--cyber-red);
+        }
+
+        /* Progress Bars */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--cyber-gradient);
+            border-radius: var(--radius-full);
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: dataFlow 2s ease-in-out infinite;
+        }
+
+        /* Chart Containers */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Activity Feed */
+        .activity-item {
+            padding: var(--space-lg);
+            border-left: 3px solid var(--cyber-blue);
+            background: rgba(255, 255, 255, 0.02);
+            margin-bottom: var(--space-md);
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            transition: var(--transition-normal);
+            position: relative;
+        }
+
+        .activity-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0, 212, 255, 0.1), transparent);
+            transition: width 0.5s ease;
+        }
+
+        .activity-item:hover::before {
+            width: 100%;
+        }
+
+        .activity-item:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid var(--cyber-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Special Effects */
+        .neon-text {
+            animation: neonGlow 2s ease-in-out infinite alternate;
+        }
+
+        .cyber-pulse {
+            animation: cyberPulse 3s ease-in-out infinite;
+        }
+
+        .float-3d {
+            animation: float3D 6s ease-in-out infinite;
+        }
+
+        .slide-in-up {
+            animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in-scale {
+            animation: fadeInScale 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 640px) {
+            .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 var(--space-md); }
+            .grid-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .text-5xl { font-size: 2.25rem; }
+            .text-4xl { font-size: 1.875rem; }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* High contrast mode */
+        @media (prefers-contrast: high) {
+            .cyber-card {
+                background: rgba(0, 0, 0, 0.8);
+                border: 2px solid white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cyber Background Effects -->
+    <div class="cyber-background"></div>
+    
+    <!-- Matrix Particles -->
+    <div class="matrix-particles" id="particles"></div>
+
+    <!-- Main Application -->
+    <div class="relative z-10 min-h-screen">
+        <!-- Cyber Header -->
+        <header class="py-8 px-4">
+            <div class="container">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center cyber-pulse float-3d">
+                            <span class="text-white text-2xl font-bold">🛡️</span>
+                        </div>
+                        <div>
+                            <h1 class="text-4xl font-black text-white neon-text">CyberShield AI</h1>
+                            <p class="text-gray-300 text-lg font-medium">Advanced Fraud Detection Platform</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <div class="flex items-center gap-3">
+                            <div id="status-indicator" class="status-dot status-online"></div>
+                            <span id="status-text" class="text-white font-semibold">System Online</span>
+                            <span id="api-status" class="text-xs text-gray-400 font-mono">Low API Mode</span>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-gray-400 text-sm">Last Update</div>
+                            <div id="last-updated" class="text-white text-sm font-mono">--:--:--</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main class="container px-4 pb-8">
+            <!-- Key Metrics Grid -->
+            <section class="mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- Total Transactions -->
+                    <div class="cyber-card cyber-card-primary p-8 slide-in-up">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <p class="text-gray-400 text-sm font-medium mb-2">Total Transactions</p>
+                                <p id="total-transactions" class="text-4xl font-bold text-white neon-text">--</p>
+                            </div>
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center float-3d">
+                                <span class="text-white text-xl">📊</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Fraud Detected -->
+                    <div class="cyber-card cyber-card-danger p-8 slide-in-up" style="animation-delay: 0.1s;">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <p class="text-gray-400 text-sm font-medium mb-2">Fraud Detected</p>
+                                <p id="fraud-detected" class="text-4xl font-bold text-cyber-red neon-text">--</p>
+                            </div>
+                            <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-xl flex items-center justify-center float-3d" style="animation-delay: 0.5s;">
+                                <span class="text-white text-xl">🚨</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill bg-gradient-to-r from-red-500 to-pink-500" style="width: 12%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Accuracy Rate -->
+                    <div class="cyber-card cyber-card-success p-8 slide-in-up" style="animation-delay: 0.2s;">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <p class="text-gray-400 text-sm font-medium mb-2">Accuracy Rate</p>
+                                <p id="accuracy-rate" class="text-4xl font-bold text-cyber-green neon-text">--</p>
+                            </div>
+                            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center float-3d" style="animation-delay: 1s;">
+                                <span class="text-white text-xl">🎯</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill bg-gradient-to-r from-green-500 to-emerald-500" style="width: 99%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Processing Speed -->
+                    <div class="cyber-card cyber-card-primary p-8 slide-in-up" style="animation-delay: 0.3s;">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <p class="text-gray-400 text-sm font-medium mb-2">Avg Processing</p>
+                                <p id="avg-processing" class="text-4xl font-bold text-cyber-purple neon-text">--</p>
+                            </div>
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center float-3d" style="animation-delay: 1.5s;">
+                                <span class="text-white text-xl">⚡</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill bg-gradient-to-r from-purple-500 to-indigo-500" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Transaction Analysis Panel -->
+                <div class="lg:col-span-1">
+                    <div class="cyber-card p-8 fade-in-scale">
+                        <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                            <span class="text-3xl">🔍</span>
+                            Transaction Analysis
+                        </h2>
+                        
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-gray-300 text-sm font-medium mb-3">Transaction ID</label>
+                                <input type="text" id="transaction-id" class="cyber-input" placeholder="Enter Transaction ID" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-300 text-sm font-medium mb-3">Customer ID</label>
+                                <input type="text" id="customer-id" class="cyber-input" placeholder="Enter Customer ID" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-300 text-sm font-medium mb-3">Terminal ID</label>
+                                <input type="text" id="terminal-id" class="cyber-input" placeholder="Enter Terminal ID" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-300 text-sm font-medium mb-3">Amount</label>
+                                <input type="number" id="amount" class="cyber-input" placeholder="Enter Amount" step="0.01" required>
+                            </div>
+                            
+                            <button type="button" onclick="analyzeTransaction()" class="cyber-btn cyber-btn-primary w-full">
+                                <span id="analyze-text">Analyze Transaction</span>
+                                <span id="analyze-loading" class="hidden">
+                                    <div class="loading-spinner mr-3"></div>
+                                    Analyzing...
+                                </span>
+                            </button>
+                        </form>
+
+                        <!-- Results Container -->
+                        <div id="results-container" class="hidden mt-8">
+                            <div id="fraud-status" class="cyber-card p-8">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h3 class="text-xl font-semibold text-white">Analysis Result</h3>
+                                    <span id="fraud-badge" class="px-4 py-2 rounded-full text-sm font-semibold bg-green-500 text-white">LEGITIMATE</span>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 gap-6 mb-6">
+                                    <div class="text-center">
+                                        <p class="text-gray-400 text-sm mb-2">Fraud Probability</p>
+                                        <p id="fraud-probability" class="text-3xl font-bold text-white neon-text">--</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="text-gray-400 text-sm mb-2">Confidence</p>
+                                        <p id="confidence-level" class="text-3xl font-bold text-white neon-text">--</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center mb-6">
+                                    <p class="text-gray-400 text-sm mb-2">Processing Time</p>
+                                    <p id="processing-time" class="text-xl font-semibold text-white">--</p>
+                                </div>
+                                
+                                <div id="explanation-content" class="text-white text-sm">
+                                    <!-- Explanation will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts and Activity Panel -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Live Metrics -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="cyber-card p-6 text-center fade-in-scale">
+                            <div class="text-3xl font-bold text-white neon-text" id="live-transactions">--</div>
+                            <div class="text-gray-400 text-sm mt-2">Live Transactions</div>
+                        </div>
+                        <div class="cyber-card p-6 text-center fade-in-scale" style="animation-delay: 0.1s;">
+                            <div class="text-3xl font-bold text-white neon-text" id="fraud-rate">--</div>
+                            <div class="text-gray-400 text-sm mt-2">Fraud Rate %</div>
+                        </div>
+                        <div class="cyber-card p-6 text-center fade-in-scale" style="animation-delay: 0.2s;">
+                            <div class="text-3xl font-bold text-white neon-text" id="avg-processing-time">--</div>
+                            <div class="text-gray-400 text-sm mt-2">Avg Time (ms)</div>
+                        </div>
+                        <div class="cyber-card p-6 text-center fade-in-scale" style="animation-delay: 0.3s;">
+                            <div class="text-3xl font-bold text-white neon-text" id="model-confidence">--</div>
+                            <div class="text-gray-400 text-sm mt-2">Confidence %</div>
+                        </div>
+                    </div>
+
+                    <!-- Charts -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Fraud Rate Chart -->
+                        <div class="cyber-card p-8">
+                            <h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+                                <span class="text-2xl">📈</span>
+                                Fraud Rate Trend
+                            </h3>
+                            <div class="chart-container">
+                                <canvas id="fraudChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Transaction Volume Chart -->
+                        <div class="cyber-card p-8">
+                            <h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+                                <span class="text-2xl">📊</span>
+                                Live Transactions
+                            </h3>
+                            <div class="chart-container">
+                                <canvas id="volumeChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Feed -->
+                    <div class="cyber-card p-8">
+                        <h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+                            <span class="text-2xl">📈</span>
+                            Real-time Activity Feed
+                        </h3>
+                        <div id="activity-feed" class="space-y-3 max-h-80 overflow-y-auto">
+                            <!-- Activity items will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Chart instances
+        let fraudChart, volumeChart;
+
+        // Initialize charts
+        function initializeCharts() {
+            // Fraud Rate Chart
+            const fraudCtx = document.getElementById('fraudChart').getContext('2d');
+            fraudChart = new Chart(fraudCtx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Fraud Rate %',
+                        data: [],
+                        borderColor: '#ef4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#ef4444',
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 2,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)',
+                                lineWidth: 1
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.8)',
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)',
+                                lineWidth: 1
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.8)',
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 1000,
+                        easing: 'easeInOutQuart'
+                    }
+                }
+            });
+
+            // Volume Chart
+            const volumeCtx = document.getElementById('volumeChart').getContext('2d');
+            volumeChart = new Chart(volumeCtx, {
+                type: 'bar',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Live Transactions',
+                        data: [],
+                        backgroundColor: 'rgba(0, 212, 255, 0.8)',
+                        borderColor: '#00d4ff',
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        borderSkipped: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)',
+                                lineWidth: 1
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.8)',
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)',
+                                lineWidth: 1
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.8)',
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 1000,
+                        easing: 'easeInOutQuart'
+                    }
+                }
+            });
+        }
+
+        // Create matrix particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 8) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Optimized stats update with caching and error handling
+        let lastMetricsUpdate = 0;
+        let cachedMetrics = null;
+        const METRICS_CACHE_DURATION = 25000; // 25 seconds cache
+
+        async function updateStats() {
+            const now = Date.now();
+            
+            // Use cached data if available and recent
+            if (cachedMetrics && (now - lastMetricsUpdate) < METRICS_CACHE_DURATION) {
+                updateMetricsDisplay(cachedMetrics);
+                return;
+            }
+
+            try {
+                const response = await fetch('/metrics', {
+                    method: 'GET',
+                    headers: {
+                        'Cache-Control': 'no-cache',
+                        'Pragma': 'no-cache'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status}`);
+                }
+                
+                const metrics = await response.json();
+                
+                // Cache the metrics
+                cachedMetrics = metrics;
+                lastMetricsUpdate = now;
+                
+                // Update display
+                updateMetricsDisplay(metrics);
+
+            } catch (error) {
+                console.warn('Error fetching metrics:', error.message);
+                // Show offline status if API fails
+                updateOfflineStatus();
+            }
+        }
+
+        function updateMetricsDisplay(metrics) {
+            // Update main metrics
+            animateNumber('total-transactions', metrics.total_transactions.toLocaleString());
+            animateNumber('fraud-detected', metrics.fraud_detected);        
+            animateNumber('accuracy-rate', metrics.accuracy.toFixed(1) + '%');
+            animateNumber('avg-processing', metrics.avg_processing_time + 'ms');
+
+            // Update live metrics
+            animateNumber('live-transactions', metrics.live_transactions);  
+            animateNumber('fraud-rate', metrics.fraud_rate.toFixed(2) + '%');
+            animateNumber('avg-processing-time', metrics.avg_processing_time + 'ms');
+            animateNumber('model-confidence', metrics.model_confidence.toFixed(1) + '%');
+
+            // Update status
+            const statusIndicator = document.getElementById('status-indicator');
+            const statusText = document.getElementById('status-text');      
+            if (metrics.status === 'online') {
+                statusIndicator.className = 'status-dot status-online';
+                statusText.textContent = 'System Online';
+            } else {
+                statusIndicator.className = 'status-dot status-offline';
+                statusText.textContent = 'System Offline';
+            }
+
+            // Update last updated time
+            document.getElementById('last-updated').textContent = new Date(metrics.last_updated).toLocaleTimeString();
+        }
+
+        function updateOfflineStatus() {
+            const statusIndicator = document.getElementById('status-indicator');
+            const statusText = document.getElementById('status-text');
+            statusIndicator.className = 'status-dot status-offline';
+            statusText.textContent = 'Connection Lost';
+        }
+
+        // Animate number changes
+        function animateNumber(elementId, targetValue) {
+            const element = document.getElementById(elementId);
+            const currentValue = element.textContent;
+            
+            if (currentValue !== targetValue) {
+                element.style.transform = 'scale(1.1)';
+                element.style.transition = 'transform 0.3s ease';
+                
+                setTimeout(() => {
+                    element.textContent = targetValue;
+                    element.style.transform = 'scale(1)';
+                }, 150);
+            }
+        }
+
+        // Optimized activity feed with reduced API calls
+        let lastActivityUpdate = 0;
+        let activityCache = [];
+        const ACTIVITY_CACHE_DURATION = 55000; // 55 seconds cache
+
+        async function addActivityItem() {
+            const now = Date.now();
+            
+            // Use cached data if available and recent
+            if (activityCache.length > 0 && (now - lastActivityUpdate) < ACTIVITY_CACHE_DURATION) {
+                addCachedActivityItem();
+                return;
+            }
+
+            try {
+                const response = await fetch('/metrics', {
+                    method: 'GET',
+                    headers: {
+                        'Cache-Control': 'no-cache',
+                        'Pragma': 'no-cache'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status}`);
+                }
+                
+                const metrics = await response.json();
+                
+                // Cache the activity data
+                const activities = [
+                    `System processed ${metrics.total_transactions.toLocaleString()} total transactions`,
+                    `Fraud detection rate: ${metrics.fraud_rate.toFixed(2)}%`,  
+                    `Model accuracy: ${metrics.accuracy.toFixed(1)}%`,
+                    `Average processing time: ${metrics.avg_processing_time}ms`,
+                    `Model confidence: ${metrics.model_confidence.toFixed(1)}%`,
+                    `System status: ${metrics.status}`,
+                    `Last updated: ${new Date(metrics.last_updated).toLocaleTimeString()}`,
+                    'Real-time monitoring active'
+                ];
+                
+                activityCache = activities;
+                lastActivityUpdate = now;
+                
+                // Add activity item
+                addCachedActivityItem();
+
+            } catch (error) {
+                console.warn('Error updating activity feed:', error.message);
+                // Add offline activity if API fails
+                addOfflineActivityItem();
+            }
+        }
+
+        function addCachedActivityItem() {
+            if (activityCache.length === 0) return;
+            
+            const activity = activityCache[Math.floor(Math.random() * activityCache.length)];
+            const timestamp = new Date().toLocaleTimeString();
+            addActivityToFeed(activity, timestamp);
+        }
+
+        function addOfflineActivityItem() {
+            const timestamp = new Date().toLocaleTimeString();
+            addActivityToFeed('Connection lost - using cached data', timestamp);
+        }
+
+        function addActivityToFeed(activity, timestamp) {
+            const feed = document.getElementById('activity-feed');
+            
+            const activityItem = document.createElement('div');
+            activityItem.className = 'activity-item slide-in-up';
+            activityItem.innerHTML = `
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-3 h-3 bg-gradient-to-r from-green-400 to-blue-400 rounded-full cyber-pulse"></div>
+                        <span class="text-white text-sm">${activity}</span>     
+                    </div>
+                    <span class="text-gray-400 text-xs font-mono">${timestamp}</span>     
+                </div>
+            `;
+
+            feed.insertBefore(activityItem, feed.firstChild);
+
+            // Keep only last 8 items to reduce DOM manipulation
+            while (feed.children.length > 8) {
+                const lastItem = feed.lastChild;
+                lastItem.style.transform = 'translateX(100%)';
+                lastItem.style.opacity = '0';
+                setTimeout(() => {
+                    if (lastItem.parentNode) {
+                        feed.removeChild(lastItem);
+                    }
+                }, 300);
+            }
+        }
+
+        // Optimized charts update with caching
+        let lastChartsUpdate = 0;
+        let chartsCache = null;
+        const CHARTS_CACHE_DURATION = 40000; // 40 seconds cache
+
+        async function updateCharts() {
+            const now = Date.now();
+            
+            // Use cached data if available and recent
+            if (chartsCache && (now - lastChartsUpdate) < CHARTS_CACHE_DURATION) {
+                updateChartsDisplay(chartsCache);
+                return;
+            }
+
+            try {
+                const response = await fetch('/metrics', {
+                    method: 'GET',
+                    headers: {
+                        'Cache-Control': 'no-cache',
+                        'Pragma': 'no-cache'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status}`);
+                }
+                
+                const metrics = await response.json();
+                
+                // Cache the metrics
+                chartsCache = metrics;
+                lastChartsUpdate = now;
+                
+                // Update charts display
+                updateChartsDisplay(metrics);
+
+            } catch (error) {
+                console.warn('Error updating charts:', error.message);
+                // Don't update charts if API fails
+            }
+        }
+
+        function updateChartsDisplay(metrics) {
+            const now = new Date();
+            const timeLabel = now.toLocaleTimeString();
+
+            // Update fraud chart
+            fraudChart.data.labels.push(timeLabel);
+            fraudChart.data.datasets[0].data.push(metrics.fraud_rate);      
+
+            if (fraudChart.data.labels.length > 8) { // Reduced from 10 to 8
+                fraudChart.data.labels.shift();
+                fraudChart.data.datasets[0].data.shift();
+            }
+
+            // Update volume chart
+            volumeChart.data.labels.push(timeLabel);
+            volumeChart.data.datasets[0].data.push(metrics.live_transactions);
+
+            if (volumeChart.data.labels.length > 8) { // Reduced from 10 to 8
+                volumeChart.data.labels.shift();
+                volumeChart.data.datasets[0].data.shift();
+            }
+
+            fraudChart.update('none'); // Use 'none' for smoother updates
+            volumeChart.update('none');
+        }
+
+        // Optimized real-time updates with proper intervals
+        let updateIntervals = {
+            stats: null,
+            activity: null,
+            charts: null
+        };
+
+        function startRealTimeUpdates() {
+            // Initial update
+            updateStats();
+            addActivityItem();
+            updateCharts();
+            
+            // Set optimized intervals - much longer to reduce API calls
+            updateIntervals.stats = setInterval(updateStats, 30000); // 30 seconds
+            updateIntervals.activity = setInterval(addActivityItem, 60000); // 1 minute
+            updateIntervals.charts = setInterval(updateCharts, 45000); // 45 seconds
+        }
+
+        function stopRealTimeUpdates() {
+            if (updateIntervals.stats) clearInterval(updateIntervals.stats);
+            if (updateIntervals.activity) clearInterval(updateIntervals.activity);
+            if (updateIntervals.charts) clearInterval(updateIntervals.charts);
+        }
+
+        // Analyze transaction
+        async function analyzeTransaction() {
+            const transactionId = document.getElementById('transaction-id').value;
+            const customerId = document.getElementById('customer-id').value;    
+            const terminalId = document.getElementById('terminal-id').value;    
+            const amount = parseFloat(document.getElementById('amount').value); 
+
+            // Validate required fields
+            if (!transactionId || !customerId || !terminalId || !amount) {      
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            // Show loading state
+            document.getElementById('analyze-text').classList.add('hidden');    
+            document.getElementById('analyze-loading').classList.remove('hidden');
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        transaction_id: transactionId,
+                        customer_id: customerId,
+                        terminal_id: terminalId,
+                        tx_amount: amount,
+                        tx_datetime: new Date().toISOString()
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('API call failed');
+                }
+
+                const result = await response.json();
+                displayResults(result);
+
+            } catch (error) {
+                console.error('Error analyzing transaction:', error);
+                alert('Error analyzing transaction. Please check the API connection.');
+            }
+
+            // Hide loading state
+            setTimeout(() => {
+                document.getElementById('analyze-text').classList.remove('hidden'); 
+                document.getElementById('analyze-loading').classList.add('hidden'); 
+            }, 500);
+        }
+
+        // Display results
+        function displayResults(result) {
+            const container = document.getElementById('results-container');     
+            const fraudStatus = document.getElementById('fraud-status');        
+            const fraudBadge = document.getElementById('fraud-badge');
+
+            // Show results container
+            container.classList.remove('hidden');
+            container.style.transform = 'translateY(20px)';
+            container.style.opacity = '0';
+            
+            setTimeout(() => {
+                container.style.transform = 'translateY(0)';
+                container.style.opacity = '1';
+                container.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            }, 100);
+
+            // Update fraud status
+            if (result.is_fraud) {
+                fraudStatus.className = 'cyber-card cyber-card-danger p-8';
+                fraudBadge.textContent = 'FRAUD DETECTED';
+                fraudBadge.className = 'px-4 py-2 rounded-full text-sm font-semibold bg-red-500 text-white';
+            } else {
+                fraudStatus.className = 'cyber-card cyber-card-success p-8';
+                fraudBadge.textContent = 'LEGITIMATE';
+                fraudBadge.className = 'px-4 py-2 rounded-full text-sm font-semibold bg-green-500 text-white';
+            }
+
+            // Update metrics
+            animateNumber('fraud-probability', (result.fraud_probability * 100).toFixed(2) + '%');
+            document.getElementById('confidence-level').textContent = result.confidence;
+            animateNumber('processing-time', result.processing_time_ms + 'ms');
+
+            // Update explanation
+            const explanationContent = document.getElementById('explanation-content');
+            explanationContent.innerHTML = `
+                <div class="text-white text-sm space-y-4">
+                    <div class="p-4 bg-white/10 rounded-xl">
+                        <div class="font-semibold mb-2">Ensemble Probability:</div>
+                        <div class="text-lg">${(result.explanation.ensemble_probability * 100).toFixed(2)}%</div>
+                    </div>
+                    <div class="p-4 bg-white/10 rounded-xl">
+                        <div class="font-semibold mb-2">Top Risk Factors:</div>
+                        <ul class="space-y-1">
+                            ${result.explanation.risk_factors.map(factor => `<li class="flex items-center"><span class="w-2 h-2 bg-red-400 rounded-full mr-2"></span>${factor}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-white/10 rounded-xl">
+                        <div class="font-semibold mb-2">Key Features:</div>
+                        <ul class="space-y-1">
+                            ${result.explanation.top_features.map(feature =>        
+                                `<li class="flex justify-between"><span>${feature.feature}:</span><span>${feature.value.toFixed(2)} (${feature.importance.toFixed(3)})</span></li>`
+                            ).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+
+            // Add to activity feed
+            const activity = `Transaction ${result.transaction_id} analyzed - ${result.is_fraud ? 'FRAUD DETECTED' : 'No fraud detected'} (${(result.fraud_probability * 100).toFixed(1)}% probability)`;
+            addCustomActivityItem(activity);
+        }
+
+        // Add custom activity item
+        function addCustomActivityItem(activity) {
+            const feed = document.getElementById('activity-feed');
+            const timestamp = new Date().toLocaleTimeString();
+
+            const activityItem = document.createElement('div');
+            activityItem.className = 'activity-item slide-in-up';
+            activityItem.innerHTML = `
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full cyber-pulse"></div>
+                        <span class="text-white text-sm">${activity}</span>
+                    </div>
+                    <span class="text-gray-400 text-xs font-mono">${timestamp}</span>
+                </div>
+            `;
+
+            feed.insertBefore(activityItem, feed.firstChild);
+
+            // Keep only last 10 items
+            while (feed.children.length > 10) {
+                const lastItem = feed.lastChild;
+                lastItem.style.transform = 'translateX(100%)';
+                lastItem.style.opacity = '0';
+                setTimeout(() => {
+                    if (lastItem.parentNode) {
+                        feed.removeChild(lastItem);
+                    }
+                }, 300);
+            }
+        }
+
+        // Add page visibility API to pause updates when tab is not visible
+        let isPageVisible = true;
+
+        document.addEventListener('visibilitychange', function() {
+            isPageVisible = !document.hidden;
+            
+            if (isPageVisible) {
+                // Resume updates when page becomes visible
+                startRealTimeUpdates();
+            } else {
+                // Pause updates when page is hidden
+                stopRealTimeUpdates();
+            }
+        });
+
+        // Add manual refresh button
+        function addRefreshButton() {
+            const header = document.querySelector('header .container .flex');
+            const refreshBtn = document.createElement('button');
+            refreshBtn.className = 'cyber-btn cyber-btn-secondary px-4 py-2';
+            refreshBtn.innerHTML = '🔄 Refresh';
+            refreshBtn.onclick = function() {
+                // Force refresh all data
+                lastMetricsUpdate = 0;
+                lastActivityUpdate = 0;
+                lastChartsUpdate = 0;
+                cachedMetrics = null;
+                activityCache = [];
+                chartsCache = null;
+                
+                updateStats();
+                addActivityItem();
+                updateCharts();
+            };
+            
+            const statusContainer = header.querySelector('.flex.items-center.gap-6');
+            statusContainer.appendChild(refreshBtn);
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+            createParticles();
+            addRefreshButton();
+            startRealTimeUpdates();
+        });
+    </script>
+</body>
+</html>
