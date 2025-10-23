@@ -210,12 +210,68 @@ class DataPreprocessor:
     
     def load_dataset(self, filepath: str = "data/processed/fraud_dataset.csv") -> pd.DataFrame:
         """Load processed dataset"""
-        
+
         if not Path(filepath).exists():
             raise FileNotFoundError(f"Dataset not found at {filepath}")
-        
+
         df = pd.read_csv(filepath)
         logger.info(f"Dataset loaded from {filepath}: {len(df):,} transactions")
+        return df
+
+    def create_synthetic_dataset(self, n_samples: int = 10000) -> pd.DataFrame:
+        """Create synthetic fraud detection dataset for testing"""
+
+        logger.info(f"Creating synthetic dataset with {n_samples:,} samples")
+
+        np.random.seed(42)  # For reproducibility
+
+        # Generate customer and terminal IDs
+        n_customers = min(1000, n_samples // 10)
+        n_terminals = min(500, n_samples // 20)
+
+        customers = [f"CUST-{i:04d}" for i in range(n_customers)]
+        terminals = [f"TERM-{i:04d}" for i in range(n_terminals)]
+
+        # Generate transaction data
+        data = []
+
+        for i in range(n_samples):
+            customer_id = np.random.choice(customers)
+            terminal_id = np.random.choice(terminals)
+
+            # Generate realistic amounts (mostly normal, some high)
+            if np.random.random() < 0.95:  # 95% normal transactions
+                amount = np.random.exponential(50) + 10  # Exponential distribution
+                amount = min(amount, 200)  # Cap at 200
+            else:  # 5% potentially fraudulent high amounts
+                amount = np.random.uniform(200, 1000)
+
+            # Generate datetime over a period
+            days_offset = np.random.randint(0, 365)
+            hours_offset = np.random.randint(0, 24)
+            minutes_offset = np.random.randint(0, 60)
+            tx_datetime = datetime(2024, 1, 1) + timedelta(
+                days=days_offset, hours=hours_offset, minutes=minutes_offset
+            )
+
+            # Transaction ID
+            tx_id = f"TX-{i:06d}"
+
+            data.append({
+                'TRANSACTION_ID': tx_id,
+                'TX_DATETIME': tx_datetime,
+                'CUSTOMER_ID': customer_id,
+                'TERMINAL_ID': terminal_id,
+                'TX_AMOUNT': round(amount, 2),
+                'TX_FRAUD': 0  # Will be set by fraud scenarios
+            })
+
+        df = pd.DataFrame(data)
+
+        # Apply fraud scenarios
+        df = self._apply_fraud_scenarios(df)
+
+        logger.info(f"Synthetic dataset created: {len(df):,} transactions, {df['TX_FRAUD'].mean():.2%} fraud rate")
         return df
 
 # Global preprocessor instance
